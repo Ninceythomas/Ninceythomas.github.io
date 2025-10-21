@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +27,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -39,6 +41,9 @@ body {
   font-size: 1.8rem;
   font-weight: 700;
   color: #2c3e50;
+  background: linear-gradient(90deg, #1abc9c, #16a085);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .navbar a {
@@ -46,25 +51,29 @@ body {
   margin-left: 2rem;
   color: #555;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar a:hover,
 .navbar a.active {
   color: #1abc9c;
+  transform: translateY(-2px);
 }
 
 /* ===== HERO SECTION ===== */
 .hero {
   text-align: center;
-  padding: 4rem 0;
+  padding: 5rem 0;
   background: linear-gradient(135deg, #eafaf1, #ffffff);
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #2c3e50;
   margin-bottom: 1rem;
+  animation: fadeInUp 1s ease forwards;
 }
 
 .hero p.intro {
@@ -74,6 +83,7 @@ body {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  animation: fadeInUp 1.2s ease forwards;
 }
 
 .btn {
@@ -83,15 +93,30 @@ body {
   border-radius: 30px;
   text-decoration: none;
   transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 1.4s ease forwards;
 }
 
 .primary-btn {
-  background-color: #1abc9c;
+  background: linear-gradient(90deg, #1abc9c, #16a085);
   color: #fff;
 }
 
 .primary-btn:hover {
-  background-color: #16a085;
+  background: linear-gradient(90deg, #16a085, #1abc9c);
+  transform: translateY(-2px);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== SECTIONS ===== */
@@ -104,6 +129,9 @@ body {
   color: #2c3e50;
   text-align: center;
   margin-bottom: 2rem;
+  background: linear-gradient(90deg, #1abc9c, #16a085);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section p.section-intro {
@@ -138,10 +166,12 @@ body {
 .info-grid ul li a {
   color: #1abc9c;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .info-grid ul li a:hover {
   text-decoration: underline;
+  color: #16a085;
 }
 
 /* ===== EDUCATION ===== */
@@ -149,9 +179,15 @@ body {
   background-color: #f7f7f7;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   text-align: center;
   margin: 1rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
 }
 
 .edu-card h3 {
@@ -198,6 +234,9 @@ body {
   font-size: 1.3rem;
   color: #2c3e50;
   margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #1abc9c, #16a085);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .project-card p.tech {
@@ -291,10 +330,14 @@ body {
   box-shadow: 0 15px 25px rgba(0,0,0,0.1);
 }
 
-.achievement-card h3 {
+.achievement-card h3,
+.certification-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #2c3e50;
+  background: linear-gradient(90deg, #1abc9c, #16a085);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .achievement-card p,
@@ -355,4 +398,3 @@ body {
     text-align: left;
   }
 }
-
