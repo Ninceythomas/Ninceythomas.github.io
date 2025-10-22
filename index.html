@@ -6,6 +6,9 @@
   <title>Nincey Infanta | Data Scientist | Full-Stack Developer | AI Engineer</title>
   <meta name="description" content="Portfolio of Nincey Infanta — Data Scientist, Full Stack Developer, and AI Engineer skilled in Python, React, Power BI, and Machine Learning." />
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,15 +20,18 @@
         <a href="index.html" class="active">Home</a>
         <a href="projects.html">Projects</a>
         <a href="internships&experience.html">Experience</a>
-        <a href="certifications.html">Acievements & Certifications</a>
+        <a href="certifications.html">Achievements & Certifications</a>
       </nav>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </header>
 
   <!-- ===== HERO SECTION ===== -->
   <section class="hero enhanced-hero">
-    <div class="container hero-content">
-      <div class="hero-text">
+    <div class="container hero-grid">
+      <div class="hero-text glass-card">
         <h1 class="headline">Building Intelligent Solutions through Code & Data</h1>
         <p class="subtext">
           I’m <strong>Nincey Infanta</strong> — a <strong>Data Scientist</strong>, <strong>Full-Stack Developer</strong>, and <strong>AI Engineer</strong> passionate about creating intelligent, scalable, and efficient digital systems that make data work smarter.
@@ -36,7 +42,7 @@
         </div>
       </div>
       <div class="hero-illustration">
-        <img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png" alt="Data Science illustration" />
+        <img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png" alt="Data Science illustration" class="floating-img"/>
       </div>
     </div>
   </section>
@@ -44,17 +50,17 @@
   <!-- ===== WHAT I DO ===== -->
   <section class="section what-i-do">
     <div class="container">
-      <h2>What I Do</h2>
+      <h2 class="section-title">What I Do</h2>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card glass-card">
           <h3>Data Science & Analytics</h3>
           <p>Extracting insights and patterns from complex datasets using Python, ML, and visualization tools.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card glass-card">
           <h3>Full-Stack Development</h3>
-          <p>Building scalable, responsive, and user-focused web applications using React, Node.js, Graphql and Powered with AI</p>
+          <p>Building scalable, responsive, and user-focused web applications using React, Node.js, GraphQL, and AI-powered solutions.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card glass-card">
           <h3>Artificial Intelligence</h3>
           <p>Designing intelligent models using NLP, Computer Vision, and Deep Learning to automate decision-making.</p>
         </div>
@@ -66,19 +72,19 @@
   <section class="section highlights">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-card">
+        <div class="stat-card glass-card">
           <h3>5+</h3>
           <p>Projects Completed</p>
         </div>
-        <div class="stat-card">
+        <div class="stat-card glass-card">
           <h3>6+</h3>
           <p>Internships & Industry Roles</p>
         </div>
-        <div class="stat-card">
+        <div class="stat-card glass-card">
           <h3>3+</h3>
           <p>AI & ML Certifications</p>
         </div>
-        <div class="stat-card">
+        <div class="stat-card glass-card">
           <h3>8.21</h3>
           <p>Current CGPA</p>
         </div>
@@ -88,27 +94,43 @@
 
   <!-- ===== ABOUT SECTION ===== -->
   <section class="section about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I’m a problem-solver who bridges the gap between data and development.
-        With experience spanning <strong>IoT systems, NLP, AI models, and Full-Stack projects</strong>,
-        I focus on building software that thinks, learns, and grows with data.
-      </p>
-      <ul class="contact-links">
-        <li><a href="mailto:iamnincey@gmail.com">iamnincey@gmail.com</a></li>
-        <li><a href="tel:+919600522070">+91 96005 22070</a></li>
-        <li><a href="https://www.linkedin.com/in/nincey-infanta-38411a269" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/Ninceythomas" target="_blank">GitHub</a></li>
-      </ul>
+    <div class="container about-grid">
+      <div class="about-text glass-card">
+        <h2>About Me</h2>
+        <p>
+          I’m a problem-solver who bridges the gap between data and development.
+          With experience spanning <strong>IoT systems, NLP, AI models, and Full-Stack projects</strong>,
+          I focus on building software that thinks, learns, and grows with data.
+        </p>
+      </div>
+      <div class="contact-links glass-card">
+        <h3>Contact Me</h3>
+        <ul>
+          <li><a href="mailto:iamnincey@gmail.com">📧 iamnincey@gmail.com</a></li>
+          <li><a href="tel:+919600522070">📞 +91 96005 22070</a></li>
+          <li><a href="https://www.linkedin.com/in/nincey-infanta-38411a269" target="_blank">💼 LinkedIn</a></li>
+          <li><a href="https://github.com/Ninceythomas" target="_blank">🐱 GitHub</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
+  <footer class="footer glass-card">
     <div class="container">
-      <p>© 2025 Nincey Infanta | Portfolio </p>
+      <p>© 2025 Nincey Infanta | Portfolio</p>
     </div>
   </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
