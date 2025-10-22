@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- ===== NAVBAR ===== -->
+  <!-- ===== HEADER / NAVBAR ===== -->
   <header class="header">
     <div class="container nav-container">
       <div class="logo">NINCEY INFANTA</div>
@@ -19,86 +19,97 @@
         <a href="internships&experience.html">Experiences</a>
         <a href="certifications.html">Achievements</a>
       </nav>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </header>
 
   <!-- ===== PROJECTS ===== -->
   <main class="section projects">
     <div class="container">
-      <h1>My Projects</h1>
+      <h1 class="section-title">My Projects</h1>
       <p class="section-intro">
-        A curated collection of the projects I’ve built — spanning IoT, Data Science, AI, and Full-Stack Web Development.
+        A curated collection of projects spanning IoT, Data Science, AI, and Full-Stack Development.
         Each project demonstrates my approach to real-world problem solving and practical implementation.
       </p>
 
       <div class="project-grid">
-        
-        <!-- Project Card -->
-        <div class="project-card">
+        <!-- Project Cards -->
+        <div class="project-card glass-card">
           <img src="images/iflush.png" alt="I-Flush Project Screenshot" class="project-img" />
           <h2>I-Flush | Smart India Hackathon 2024 Grand Finale</h2>
-          <p>Developed an IoT-based low-water flushing system using sensors and suction pumps, with a mobile app for remote control promoting sustainable water usage.</p>
-          <p class="tech">IoT · ESP32 · Mobile App Integration</p>
-          <a href="https://github.com/Ninceythomas/Sih-2024-iflush" target="_blank">View Code on GitHub</a>
+          <p>IoT-based low-water flushing system with mobile app control promoting sustainable water usage.</p>
+          <p class="tech">IoT · ESP32 · Mobile App</p>
+          <a href="https://github.com/Ninceythomas/Sih-2024-iflush" target="_blank" class="btn primary-btn">View Code</a>
         </div>
 
-        <div class="project-card">
-          <img src="images/iflush.png" alt="I-Flush Project" class="project-img" />
+        <div class="project-card glass-card">
+          <img src="images/iflush.png" alt="Corporate Website" class="project-img" />
           <h2>Corporate Website Hosting | Chatrapati Enterprises</h2>
-          <p>Hosted and optimized a business website using Hostinger and SEO practices to enhance brand visibility and traffic.</p>
+          <p>Hosted and optimized a business website with SEO to enhance brand visibility.</p>
           <p class="tech">HTML · SEO · Hostinger</p>
-          <a href="https://chatrapatienterprises.in" target="_blank">Visit Website</a>
+          <a href="https://chatrapatienterprises.in" target="_blank" class="btn primary-btn">Visit Website</a>
         </div>
 
-        <div class="project-card">
-          <img src="images/ytsa.png" alt="ytsa Project" class="project-img" />
+        <div class="project-card glass-card">
+          <img src="images/ytsa.png" alt="YouTube Sentiment Analysis" class="project-img" />
           <h2>YouTube Sentiment Analysis</h2>
-          <p>Analyzed YouTube comments using NLTK and TextBlob to assess user sentiment and engagement trends.</p>
+          <p>Analyzed YouTube comments using NLTK and TextBlob to assess sentiment and engagement trends.</p>
           <p class="tech">Python · NLTK · TextBlob</p>
-          <a href="https://github.com/Ninceythomas/Sentiment_Analysis" target="_blank">View Code on GitHub</a>
+          <a href="https://github.com/Ninceythomas/Sentiment_Analysis" target="_blank" class="btn primary-btn">View Code</a>
         </div>
 
-        <div class="project-card">
-          <img src="images/rtan.png" alt="rtan Project" class="project-img" />
-          <h2>Real-Time Twitter Analysis | NullClass EduTech Pvt. Ltd.</h2>
-          <p>Built a Power BI dashboard that visualized real-time Twitter engagement, likes, and impressions for strategic insights.</p>
-          <p class="tech">Power BI · Data Visualization · Python</p>
-          <a href="https://github.com/Ninceythomas/Twitter_Analysis-with-Power-BI" target="_blank">View Code on GitHub</a>
+        <div class="project-card glass-card">
+          <img src="images/rtan.png" alt="Real-Time Twitter Analysis" class="project-img" />
+          <h2>Real-Time Twitter Analysis | NullClass EduTech</h2>
+          <p>Power BI dashboard visualizing real-time Twitter engagement, likes, and impressions for insights.</p>
+          <p class="tech">Power BI · Python · Data Visualization</p>
+          <a href="https://github.com/Ninceythomas/Twitter_Analysis-with-Power-BI" target="_blank" class="btn primary-btn">View Code</a>
         </div>
 
-        <div class="project-card">
-          <img src="images/FCSAT.png" alt="FCSAT Project" class="project-img" />
+        <div class="project-card glass-card">
+          <img src="images/FCSAT.png" alt="Flipkart CSAT Project" class="project-img" />
           <h2>Flipkart CSAT | Labmentix</h2>
-          <p>Developed a machine learning model to classify products using text preprocessing, feature extraction, and model optimization.</p>
+          <p>ML model to classify products using text preprocessing, feature extraction, and optimization.</p>
           <p class="tech">Python · Pandas · Scikit-learn</p>
-          <a href="https://github.com/Ninceythomas/labmentix_Flipkart_CSAT_Project" target="_blank">View Code on GitHub</a>
+          <a href="https://github.com/Ninceythomas/labmentix_Flipkart_CSAT_Project" target="_blank" class="btn primary-btn">View Code</a>
         </div>
 
-        <div class="project-card">
-          <img src="images/Netflix.png" alt="Netflix Project" class="project-img" />
+        <div class="project-card glass-card">
+          <img src="images/Netflix.png" alt="Netflix Clustering" class="project-img" />
           <h2>Netflix Clustering | Labmentix</h2>
-          <p>Performed unsupervised clustering on Netflix data to categorize content by genre and audience trends using K-Means and PCA.</p>
-          <p class="tech">Python · Machine Learning · PCA</p>
-          <a href="https://github.com/Ninceythomas/labmentix_Netflix_Clustering" target="_blank">View Code on GitHub</a>
+          <p>Unsupervised clustering of Netflix data to categorize content by genre using K-Means and PCA.</p>
+          <p class="tech">Python · ML · PCA</p>
+          <a href="https://github.com/Ninceythomas/labmentix_Netflix_Clustering" target="_blank" class="btn primary-btn">View Code</a>
         </div>
 
-        <div class="project-card">
-          <img src="images/EchoWaveAI.png" alt="EchoWaveAI Project" class="project-img" />
+        <div class="project-card glass-card">
+          <img src="images/EchoWaveAI.png" alt="EchoWave AI Project" class="project-img" />
           <h2>EchoWave AI</h2>
-          <p>Automated YouTube video-to-audio text synthesis using Deepgram, Pytube, MoviePy, and gTTS for efficient multimedia conversion.</p>
+          <p>Automated YouTube video-to-audio text synthesis using Deepgram, Pytube, MoviePy, and gTTS.</p>
           <p class="tech">Python · Deepgram API · MoviePy · gTTS</p>
+          <a href="#" class="btn primary-btn">View Project</a>
         </div>
-
       </div>
     </div>
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
+  <footer class="footer glass-card">
     <div class="container">
       <p>© 2025 Nincey Infanta | Portfolio</p>
     </div>
   </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
-
