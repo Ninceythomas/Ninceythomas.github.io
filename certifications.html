@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- ===== NAVBAR ===== -->
+  <!-- ===== HEADER / NAVBAR ===== -->
   <header class="header">
     <div class="container nav-container">
       <div class="logo">NINCEY INFANTA</div>
@@ -19,40 +19,41 @@
         <a href="internships&experience.html">Experiences</a>
         <a href="certifications.html" class="active">Certifications & Achievements</a>
       </nav>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </header>
 
   <!-- ===== ACHIEVEMENTS & CERTIFICATIONS ===== -->
   <main class="section achievements">
     <div class="container">
-      <h1>Certifications & Achievements</h1>
+      <h1 class="section-title">Certifications & Achievements</h1>
       <p class="section-intro">
-        Here you can explore my professional certifications and notable achievements.
+        Explore my professional certifications and notable achievements that reflect my expertise and dedication.
       </p>
 
       <!-- ===== ACHIEVEMENTS ===== -->
       <section class="achievements-section">
         <h2>Achievements</h2>
         <div class="achievement-grid">
-
-          <div class="achievement-card">
+          <div class="achievement-card glass-card">
             <h3>Code Debugging — National Symposium</h3>
             <p>Secured third place demonstrating advanced problem-solving and technical proficiency.</p>
-            <a href="https://drive.google.com/file/d/1DLTYIQQoyWY9h1QtVZ4-mamTEoe1JoGc/view?usp=sharing" target="_blank">View Certificate</a>
+            <a href="https://drive.google.com/file/d/1DLTYIQQoyWY9h1QtVZ4-mamTEoe1JoGc/view?usp=sharing" target="_blank" class="btn primary-btn">View Certificate</a>
           </div>
 
-          <div class="achievement-card">
+          <div class="achievement-card glass-card">
             <h3>NEP 2020 Student Ambassador</h3>
-            <p>Selected as the sole nominee for leadership, communication, and organizational skills.(certificate yet to be received)</p>
-            <a href="https://drive.google.com/drive/folders/11_lgyO_V2p1Dd6mdxR2pLoq334OFjDpv?usp=drive_link" target="_blank">View Certificate</a>
+            <p>Selected as the sole nominee for leadership, communication, and organizational skills. (Certificate pending)</p>
+            <a href="https://drive.google.com/drive/folders/11_lgyO_V2p1Dd6mdxR2pLoq334OFjDpv?usp=drive_link" target="_blank" class="btn primary-btn">View Certificate</a>
           </div>
 
-          <div class="achievement-card">
+          <div class="achievement-card glass-card">
             <h3>Smart India Hackathon 2024 — Team Leader</h3>
-            <p>Participated as team leader in the grand finale, implementing innovative solutions in IoT and software development.</p>
-            <a href="https://drive.google.com/file/d/1UMjfPE49DGIFZFsWizHF9QfqhDNjwBSd/view?usp=sharing" target="_blank">View Certificate</a>
+            <p>Participated as team leader in the grand finale, implementing innovative IoT and software solutions.</p>
+            <a href="https://drive.google.com/file/d/1UMjfPE49DGIFZFsWizHF9QfqhDNjwBSd/view?usp=sharing" target="_blank" class="btn primary-btn">View Certificate</a>
           </div>
-
         </div>
       </section>
 
@@ -60,23 +61,30 @@
       <section class="certifications-section">
         <h2>Courses & Certifications</h2>
         <div class="certification-grid">
-
-          <div class="certification-card">
-            <p> Courses Completed</p>
-            <a href="https://drive.google.com/drive/folders/1eSewnknifZEkcNgyoknuhWEVnZoqb1T9?usp=sharing" target="_blank">View Certificates</a>
+          <div class="certification-card glass-card">
+            <p>Courses Completed</p>
+            <a href="https://drive.google.com/drive/folders/1eSewnknifZEkcNgyoknuhWEVnZoqb1T9?usp=sharing" target="_blank" class="btn primary-btn">View Certificates</a>
           </div>
-
         </div>
       </section>
     </div>
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
+  <footer class="footer glass-card">
     <div class="container">
       <p>© 2025 Nincey Infanta | Portfolio</p>
     </div>
   </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
-
