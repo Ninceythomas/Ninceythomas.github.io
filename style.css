@@ -331,3 +331,35 @@ body {
     align-items: flex-start;
   }
 }
+/* ===== BUTTON STYLES (UNIVERSAL FIX) ===== */
+a.btn,
+button.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 119, 182, 0.15);
+}
+
+a.btn:hover,
+button.btn:hover {
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 119, 182, 0.25);
+}
+
+/* Fix alignment inside cards */
+.project-card a.btn,
+.experience-card a.btn,
+.achievement-card a.btn,
+.certification-card a.btn {
+  margin-top: 0.8rem;
+  display: inline-block;
+  align-self: flex-start;
+}
+
