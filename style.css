@@ -1,264 +1,243 @@
-/* ==============================
+/* =========================
    GLOBAL STYLES
-============================== */
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
-  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background-color: #0e0e0e;
-  color: #f5f5f5;
+  background: #fdfdfd;
+  color: #222;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Container */
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
-/* ==============================
-   NAVBAR
-============================== */
-.header {
-  background: rgba(30, 30, 30, 0.95);
-  backdrop-filter: blur(12px);
-  position: fixed;
-  width: 100%;
+/* =========================
+   HEADER & NAVBAR
+========================= */
+header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  position: sticky;
   top: 0;
-  left: 0;
-  z-index: 1000;
-  padding: 0.8rem 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.nav-container {
+nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #0078ff;
 }
 
 .logo {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  color: #fff;
+  color: #0078ff;
 }
 
-.navbar a {
-  color: #d1d1d1;
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.navbar a:hover,
-.navbar a.active {
-  color: #00e676;
-}
-
-/* ==============================
-   HERO SECTION (HOMEPAGE)
-============================== */
-.hero {
+/* =========================
+   SECTION HEADINGS
+========================= */
+section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #111;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-height: 100vh;
-  padding-top: 7rem;
-  gap: 2rem;
+  justify-content: center;
+  gap: 10px;
 }
 
-.hero-text h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #fff;
+section h2 i {
+  color: #0078ff;
 }
 
-.hero-text p {
-  color: #cfcfcf;
-  margin: 1.2rem 0;
-  max-width: 500px;
-}
-
-.btn {
-  display: inline-block;
-  background: linear-gradient(90deg, #00e676, #00b8d4);
-  color: #000;
-  padding: 0.9rem 1.8rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 230, 118, 0.4);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 230, 118, 0.6);
-}
-
-/* Hero Image */
-.hero-img {
-  flex: 1;
-  text-align: right;
-}
-
-.hero-img img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #00e676;
-  box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
-}
-
-/* ==============================
-   SECTION TITLES
-============================== */
-.section {
-  padding: 5rem 0;
-}
-
-.section h1, .section h2 {
-  text-align: center;
-  color: #00e676;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
-/* ==============================
-   GRIDS (PROJECTS / ACHIEVEMENTS / INTERNSHIPS / CERTIFICATIONS)
-============================== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 1.8rem;
-}
-
-.card {
-  background: #1c1c1c;
-  border-radius: 12px;
+/* =========================
+   GLASS CARD STYLE
+========================= */
+.glass-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   padding: 1.5rem;
-  text-align: center;
-  transition: all 0.4s ease;
-  border: 1px solid #2b2b2b;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(0, 230, 118, 0.2);
+.glass-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 6px 25px rgba(0, 120, 255, 0.25);
 }
 
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.card h3 {
-  margin-top: 1rem;
-  color: #fff;
-  font-size: 1.1rem;
-}
-
-.card p {
-  color: #bdbdbd;
-  margin: 0.8rem 0 1.2rem;
-  font-size: 0.95rem;
-}
-
-.card a {
-  color: #00e676;
-  text-decoration: none;
-  font-weight: 600;
-  border: 1px solid #00e676;
-  padding: 0.4rem 1rem;
-  border-radius: 6px;
-  transition: all 0.3s;
-}
-
-.card a:hover {
-  background: #00e676;
-  color: #000;
-}
-
-/* ==============================
-   COURSE GRID (with “More Courses”)
-============================== */
+/* =========================
+   GRID LAYOUTS (Projects, Experience, Achievements, Courses)
+========================= */
+.project-grid,
+.experience-grid,
+.achievement-grid,
 .course-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
+.project-card,
+.experience-card,
+.achievement-card,
 .course-card {
-  background: #1e1e1e;
-  padding: 1.5rem;
-  border-radius: 10px;
   text-align: center;
-  border: 1px solid #2a2a2a;
 }
 
-.course-card h4 {
-  color: #00e676;
+.project-card img,
+.experience-card img,
+.achievement-card img,
+.course-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease;
 }
 
-.course-card a.more-link {
-  color: #00b8d4;
+.project-card img:hover,
+.experience-card img:hover,
+.achievement-card img:hover,
+.course-card img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   TEXT INSIDE CARDS
+========================= */
+.glass-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.glass-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.glass-card a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  background: #0078ff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.glass-card a:hover {
+  background: #005fcc;
+}
+
+/* =========================
+   "More Courses" Button
+========================= */
+.more-courses {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.more-courses a {
+  display: inline-block;
+  background: #0078ff;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
-  display: inline-block;
-  margin-top: 1rem;
-  border: 1px solid #00b8d4;
-  padding: 0.4rem 0.9rem;
-  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.course-card a.more-link:hover {
-  background: #00b8d4;
-  color: #000;
+.more-courses a:hover {
+  background: #005fcc;
+  transform: translateY(-3px);
 }
 
-/* ==============================
+/* =========================
    FOOTER
-============================== */
-.footer {
-  background: #101010;
+========================= */
+footer {
+  background: #f1f1f1;
   text-align: center;
-  padding: 1.5rem 0;
-  border-top: 1px solid #2a2a2a;
-  color: #aaa;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  color: #666;
   font-size: 0.9rem;
+  border-top: 1px solid #ddd;
 }
 
-.footer a {
-  color: #00e676;
-  text-decoration: none;
-}
-
-/* ==============================
+/* =========================
    RESPONSIVE DESIGN
-============================== */
-@media (max-width: 900px) {
-  .hero {
+========================= */
+@media (max-width: 992px) {
+  .project-grid,
+  .experience-grid,
+  .achievement-grid,
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
     flex-direction: column;
-    text-align: center;
+    gap: 0.5rem;
   }
 
-  .hero-img img {
-    width: 250px;
-    height: 250px;
+  .project-grid,
+  .experience-grid,
+  .achievement-grid,
+  .course-grid {
+    grid-template-columns: 1fr;
   }
 
-  .navbar a {
-    margin-left: 1rem;
+  section h2 {
+    font-size: 1.6rem;
   }
+}
+
+/* =========================
+   ICONS NEXT TO PROJECTS
+========================= */
+.project-card i,
+.experience-card i,
+.achievement-card i {
+  color: #0078ff;
+  font-size: 1.3rem;
+  margin-right: 0.4rem;
 }
