@@ -1,141 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nincey Infanta | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nincey Infanta | Data Scientist | AI Engineer | Full Stack Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-color: #fdfdfd;
+      --text-color: #222;
+      --accent-color: #6c63ff;
+      --button-bg: #6c63ff;
+      --button-text: #fff;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+      --accent-color: #bb86fc;
+      --button-bg: #bb86fc;
+      --button-text: #121212;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease-in-out;
+    }
 
-  <!-- Favicon -->
-  <link rel="icon" href="logo.png" type="image/png" />
-  <script>
-    // JavaScript fallback for favicon if not found
-    document.addEventListener("DOMContentLoaded", () => {
-      const favicon = document.querySelector("link[rel='icon']");
-      if (!favicon) {
-        const link = document.createElement("link");
-        link.rel = "icon";
-        link.type = "image/png";
-        link.href = "logo.png";
-        document.head.appendChild(link);
-      }
-    });
-  </script>
+    /* ===== NAVBAR ===== */
+    header {
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1.5rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: var(--bg-color);
+      z-index: 100;
+      transition: background 0.3s;
+    }
+    header a {
+      color: var(--text-color);
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    header a:hover {
+      color: var(--accent-color);
+    }
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-bx1yE2oXcC6+NyzvVZs4XQ74Z7cFiVYb6V6yXyG3J2ErG9j7PZc2/1pR4j9eE6Kd4X0B2VuG2hPsHnXhV2cGiw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    /* ===== THEME TOGGLE ===== */
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    /* ===== MAIN SECTION ===== */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-size: 3rem;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+      opacity: 0.85;
+    }
+    p {
+      max-width: 600px;
+      font-size: 1rem;
+      line-height: 1.7;
+      opacity: 0.9;
+      margin-bottom: 1.8rem;
+    }
 
-  <link rel="stylesheet" href="style.css" />
+    /* ===== BUTTONS ===== */
+    .btn-container {
+      display: flex;
+      gap: 1rem;
+    }
+    .btn {
+      text-decoration: none;
+      background: var(--button-bg);
+      color: var(--button-text);
+      padding: 0.8rem 1.8rem;
+      border-radius: 2rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: transparent;
+      color: var(--accent-color);
+      border: 2px solid var(--accent-color);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.2rem; }
+    }
+  </style>
 </head>
-
 <body>
-  <!-- NAVBAR -->
-  <header class="header glass-nav">
-    <div class="container nav-container">
-      <div class="logo">
-        <img src="logo.png" alt="Logo" class="logo-img">
-        <span>NINCEY INFANTA</span>
-      </div>
-      <nav class="navbar">
-        <a href="index.html" class="active">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="internships&experience.html">Experience</a>
-        <a href="certifications.html">Achievements</a>
-      </nav>
-      <div class="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
+  <header>
+    <a href="index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <a href="about.html" title="About Me"><i class="fa-solid fa-user"></i></a>
+    <a href="projects.html" title="Projects"><i class="fa-solid fa-diagram-project"></i></a>
+    <a href="experience.html" title="Experience & Internships"><i class="fa-solid fa-briefcase"></i></a>
+    <a href="achievements.html" title="Achievements & Certifications"><i class="fa-solid fa-award"></i></a>
+    <a href="contact.html" title="Contact"><i class="fa-solid fa-envelope"></i></a>
+    <i class="fa-solid fa-moon theme-toggle" id="theme-toggle" title="Toggle Theme"></i>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <h1 class="headline">Building Intelligent Solutions through Code & Data</h1>
-        <p class="subtext">
-          I’m <strong>Nincey Infanta</strong> — a <strong>Data Scientist</strong>, <strong>Full-Stack Developer</strong>, and <strong>AI Engineer</strong> passionate about creating intelligent, scalable, and efficient digital systems.
-        </p>
-        <div class="cta-buttons">
-          <a href="projects.html" class="btn primary-btn">Let’s get started →</a>
-          <a href="resume.pdf" target="_blank" class="btn secondary-btn">View Resume</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png" alt="Nincey Illustration">
-      </div>
+  <main>
+    <h1>Hi, I’m Nincey Infanta </h1>
+    <h2>Data Scientist | Full Stack Developer | AI Engineer</h2>
+    <p>
+      Passionate about transforming data into meaningful insights and creating intelligent applications.  
+      I aim to bridge AI and full-stack development to craft impactful solutions that make technology more human.
+    </p>
+    <div class="btn-container">
+      <a href="cv.pdf" class="btn" target="_blank">View CV</a>
+      <a href="cv.pdf" class="btn" download>Download CV</a>
     </div>
-  </section>
+  </main>
 
-  <!-- SERVICES -->
-  <section class="section what-i-do">
-    <div class="container">
-      <h2 class="section-title">What I Do</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Data Science & Analytics</h3>
-          <p>Extracting insights and patterns from complex datasets using Python, ML, and visualization tools.</p>
-        </div>
-        <div class="service-card">
-          <h3>Full-Stack Development</h3>
-          <p>Building scalable, responsive web applications using React, Node.js, and AI-powered systems.</p>
-        </div>
-        <div class="service-card">
-          <h3>Artificial Intelligence</h3>
-          <p>Designing models using NLP, Computer Vision, and Deep Learning to automate decisions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="section highlights">
-    <div class="container stats-grid">
-      <div class="stat-card"><h3>6+</h3><p>Projects Completed</p></div>
-      <div class="stat-card"><h3>5+</h3><p>Internships & Roles</p></div>
-      <div class="stat-card"><h3>5+</h3><p>Certifications</p></div>
-      <div class="stat-card"><h3>8.21</h3><p>Current CGPA</p></div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section about">
-    <div class="container about-grid">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>I’m a problem-solver bridging the gap between data and development.
-          With experience spanning <strong>IoT systems, NLP, AI models, and Full-Stack projects</strong>,
-          I focus on building software that thinks, learns, and grows with data.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-card"><i class="fas fa-envelope"></i><h3>Email</h3><a href="mailto:iamnincey@gmail.com">iamnincey@gmail.com</a></div>
-        <div class="contact-card"><i class="fas fa-phone"></i><h3>Phone</h3><a href="tel:+919600522070">+91 96005 22070</a></div>
-        <div class="contact-card"><i class="fab fa-linkedin"></i><h3>LinkedIn</h3><a href="https://www.linkedin.com/in/nincey-infanta-38411a269" target="_blank">LinkedIn Profile</a></div>
-        <div class="contact-card"><i class="fab fa-github"></i><h3>GitHub</h3><a href="https://github.com/Ninceythomas" target="_blank">GitHub Profile</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Nincey Infanta | Portfolio</p>
-    </div>
+  <footer>
+    © 2025 Nincey Infanta | All Rights Reserved.
   </footer>
 
-  <!-- JS -->
   <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navbar = document.querySelector('.navbar');
-    hamburger.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-      hamburger.classList.toggle('open');
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check for previously saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      body.setAttribute('data-theme', 'dark');
+      toggle.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggle.addEventListener('click', () => {
+      if (body.getAttribute('data-theme') === 'dark') {
+        body.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        toggle.classList.replace('fa-sun', 'fa-moon');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        toggle.classList.replace('fa-moon', 'fa-sun');
+      }
     });
   </script>
 </body>
