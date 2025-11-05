@@ -17,7 +17,9 @@
       --accent-color: #a855f7; 
       --button-bg: #a855f7;
       --button-text: #ffffff;
-      --subtext-color: #d6c9ff;
+      --card-bg: #1b0a36;
+      --muted-text: #d6c9ff;
+      --icon-color: #c77dff;
     }
 
     [data-theme="light"],
@@ -27,7 +29,9 @@
       --accent-color: #9333ea;
       --button-bg: #9333ea;
       --button-text: #fff;
-      --subtext-color: #444; /* darker color for readability in light mode */
+      --card-bg: #f2f0ff;
+      --muted-text: #4a148c;
+      --icon-color: #9333ea; /* darker color for readability in light mode */
     }
 
     body {
@@ -58,14 +62,14 @@
     .about-summary {
       font-size: 1.2rem;
       line-height: 1.8;
-      color: var(--subtext-color);
+      color: var(--muted-text);
       margin-bottom: 30px;
       transition: color 0.5s;
     }
 
     .reason {
       font-size: 1.2rem;
-      color: var(--subtext-color);
+      color: var(--muted-text);
       margin-bottom: 40px;
       line-height: 1.8;
       transition: color 0.5s;
@@ -80,8 +84,8 @@
 
     .buttons a {
       text-decoration: none;
-      background: linear-gradient(90deg, #8a2be2, #c77dff);
-      color: #fff;
+      background:  var(--accent-color);
+      color:var(--button-text);
       padding: 12px 30px;
       border-radius: 30px;
       font-weight: 600;
@@ -90,7 +94,7 @@
 
     .buttons a:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 20px #8a2be2;
+      box-shadow: 0 0 20px var(--accent-color);
     }
 
     .info-section {
@@ -109,7 +113,7 @@
     }
 
     .info-card {
-      background-color: #1b0a36;
+      background-color: var(--card-bg);
       border-radius: 15px;
       padding: 25px;
       width: 250px;
@@ -125,18 +129,18 @@
 
     .info-card h2 {
       font-size: 2.2rem;
-      color: #c77dff;
+      color: var(--accent-color);
     }
 
     .info-card p {
       font-size: 1.1rem;
-      color: var(--subtext-color);
+      color: var(--text-color);
     }
 
     .info-wide {
       width: 85%;
       height: 100px;
-      background-color: #1b0a36;
+      background-color:  var(--card-bg);
       border-radius: 15px;
       padding: 25px;
       color: var(--text-color);
@@ -150,7 +154,7 @@
     .skills h2 {
       font-size: 2rem;
       margin-bottom: 20px;
-      color: #c77dff;
+      color:var(--accent-color);
     }
 
     .skills-grid {
@@ -161,7 +165,7 @@
     }
 
     .skill-item {
-      background-color: #1b0a36;
+      background-color: var(--card-bg);
       border-radius: 15px;
       padding: 20px;
       width: 110px;
@@ -176,13 +180,14 @@
 
     .skill-item i {
       font-size: 2rem;
-      color: #c77dff;
+      color: var(--icon-color);
       margin-bottom: 10px;
+      transition: color 0.3s;
     }
 
     .skill-item p {
       font-size: 0.9rem;
-      color: var(--subtext-color);
+      color: var(--muted-text);
       font-weight: 500;
     }
 
@@ -193,7 +198,7 @@
 
     .education h2 {
       font-size: 2rem;
-      color: #c77dff;
+      color: var(--accent-color);
       margin-bottom: 30px;
     }
 
@@ -205,7 +210,7 @@
     }
 
     .edu-item {
-      background-color: #1b0a36;
+      background-color: var(--card-bg);
       border-radius: 15px;
       padding: 25px;
       display: flex;
@@ -223,7 +228,8 @@
 
     .edu-item i {
       font-size: 2.5rem;
-      color: #c77dff;
+      color: var(--icon-color);
+      transition: color 0.3s;
     }
 
     .edu-text {
@@ -242,13 +248,13 @@
     }
 
     .side-nav a {
-      color: #f6f2fa;
+      color:var(--icon-color);
       font-size: 1.5rem;
       transition: 0.3s;
     }
 
     .side-nav a:hover {
-      color: #fff;
+      color:var(--accent-color);
       transform: scale(1.2);
     }
 
