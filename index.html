@@ -1,238 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nincey Infanta | Portfolio </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nincey Infanta | Data Scientist & Full Stack Developer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
+      --bg-color: #0f1115;
+      --text-color: #ffffff;
+      --accent-color: #00ff66;
+      --button-bg: #00ff66;
+      --button-text: #0f1115;
+    }
+
+    [data-theme="light"] {
       --bg-color: #fdfdfd;
-      --text-color: #222;
-      --accent-color: #6c63ff;
-      --button-bg: #6c63ff;
+      --text-color: #121212;
+      --accent-color: #00c04b;
+      --button-bg: #00c04b;
       --button-text: #fff;
     }
-    [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #f1f1f1;
-      --accent-color: #bb86fc;
-      --button-bg: #bb86fc;
-      --button-text: #121212;
-    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
     }
+
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      transition: all 0.3s ease-in-out;
-    }
-
-    /* ===== HEADER (VERTICAL RIGHT ICON BAR) ===== */
-    header {
-      position: fixed;
-      top: 50%;
-      right: 2%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 2rem;
-      z-index: 100;
-    }
-    header a {
-      color: var(--text-color);
-      font-size: 3rem;
-      transition: color 0.3s, transform 0.3s;
-    }
-    header a:hover {
-      color: var(--accent-color);
-      transform: scale(1.2);
-    }
-    .theme-toggle {
-      cursor: pointer;
-      font-size: 3rem;
-      margin-top: 1rem;
-      transition: transform 0.3s;
-    }
-    .theme-toggle:hover {
-      color: var(--accent-color);
-      transform: rotate(25deg);
+      justify-content: center;
     }
 
-    /* ===== MAIN SECTION ===== */
-    main {
-      flex: 1;
+    /* ===== MAIN CONTAINER ===== */
+    .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 6rem 8rem;
+      width: 90%;
+      max-width: 1200px;
       gap: 3rem;
     }
 
-    .logo-section img {
-      width: 350px;
-      height: 350px;
-      border-radius: 50%;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-      transition: transform 0.4s ease;
-    }
-    .logo-section img:hover {
-      transform: scale(1.08) rotate(-5deg);
+    /* ===== LEFT: LOGO IMAGE ===== */
+    .logo-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
+    .logo-section img {
+      width: 400px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 102, 0.3);
+      transition: transform 0.4s ease;
+    }
+
+    .logo-section img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== RIGHT: INTRO SECTION ===== */
     .intro-section {
-      text-align: right;
-      max-width: 600px;
-      margin-right: 4rem;
-      animation: fadeIn 1s ease-in-out;
+      flex: 1;
+      text-align: left;
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(25px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    h1 {
-      font-size: 4rem;
-      color: var(--accent-color);
-      margin-bottom: 0.5rem;
-      line-height: 1.1;
+    .intro-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
-    h2 {
+
+    .intro-section h1 span {
+      color: var(--accent-color);
+    }
+
+    .intro-section h2 {
       font-size: 2rem;
       margin-bottom: 1.2rem;
       color: var(--text-color);
       opacity: 0.85;
     }
-    p {
-      font-size: 1.5rem;
+
+    .intro-section p {
+      font-size: 1rem;
       line-height: 1.8;
+      max-width: 600px;
       opacity: 0.9;
       margin-bottom: 2rem;
     }
 
-    /* ===== BUTTONS ===== */
-    .btn-container {
-      display: flex;
-      justify-content: flex-end;
-      gap: 1rem;
-    }
     .btn {
-      text-decoration: none;
-      background: var(--button-bg);
-      color: var(--button-text);
-      padding: 1rem 2.2rem;
-      border-radius: 2rem;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-    }
-    .btn:hover {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       background: transparent;
       color: var(--accent-color);
       border: 2px solid var(--accent-color);
+      padding: 0.8rem 1.6rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      background: var(--accent-color);
+      color: var(--button-text);
       transform: translateY(-2px);
     }
 
-    /* ===== FOOTER ===== */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 1.5rem;
-      opacity: 0.7;
+    /* ===== VERTICAL ICON MENU ===== */
+    .nav-icons {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      z-index: 100;
     }
 
-    /* ===== RESPONSIVE DESIGN ===== */
-    @media (max-width: 1024px) {
-      main {
+    .nav-icons a,
+    .nav-icons i {
+      background: #1b1f24;
+      color: var(--text-color);
+      font-size: 1.4rem;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      transition: 0.3s ease;
+    }
+
+    .nav-icons a:hover,
+    .nav-icons i:hover {
+      background: var(--accent-color);
+      color: var(--button-text);
+      transform: scale(1.1);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .container {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 8rem 2rem;
+        text-align: center;
       }
       .intro-section {
         text-align: center;
-        margin-right: 0;
-      }
-      header {
-        flex-direction: row;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        justify-content: center;
-        background: var(--bg-color);
-        padding: 1rem;
-        transform: none;
       }
       .logo-section img {
         width: 250px;
       }
-      h1 { font-size: 3rem; }
-      h2 { font-size: 1.5rem; }
-      p { font-size: 1.1rem; }
+      .intro-section h1 {
+        font-size: 2.2rem;
+      }
+      .intro-section h2 {
+        font-size: 1.2rem;
+      }
+      .nav-icons {
+        right: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
+  <!-- NAV ICONS -->
+  <div class="nav-icons">
     <a href="index.html" title="Home"><i class="fa-solid fa-house"></i></a>
     <a href="about.html" title="About Me"><i class="fa-solid fa-user"></i></a>
     <a href="projects.html" title="Projects"><i class="fa-solid fa-diagram-project"></i></a>
-    <a href="experience.html" title="Experience & Internships"><i class="fa-solid fa-briefcase"></i></a>
-    <a href="achievements.html" title="Achievements & Certifications"><i class="fa-solid fa-award"></i></a>
+    <a href="experience.html" title="Experience"><i class="fa-solid fa-briefcase"></i></a>
+    <a href="achievements.html" title="Achievements"><i class="fa-solid fa-award"></i></a>
     <a href="contact.html" title="Contact"><i class="fa-solid fa-envelope"></i></a>
-    <i class="fa-solid fa-moon theme-toggle" id="theme-toggle" title="Toggle Theme"></i>
-  </header>
+    <i class="fa-solid fa-moon" id="theme-toggle" title="Toggle Theme"></i>
+  </div>
 
-  <main>
+  <!-- MAIN CONTENT -->
+  <div class="container">
     <div class="logo-section">
       <img src="logo.png" alt="Nincey Infanta Logo">
     </div>
-
     <div class="intro-section">
-      <h1>Hi, I’m  Nincey Infanta </h1><br>
-      <h2>Data Scientist | Full Stack Developer | AI Engineer</h2><br>
+      <h1>Hi, I'm <span>Nincey Infanta</span></h1>
+      <h2>Data Scientist | Full Stack Developer | AI Engineer</h2>
       <p>
-        Passionate about transforming data into intelligent insights and crafting impactful web solutions.<br>
-        I integrate AI and full-stack development to deliver human-centered, purposeful innovations.
+        I’m passionate about transforming data into intelligent insights and creating
+        dynamic, human-centered web solutions. I strive to bridge AI and development to
+        build innovative systems that truly make a difference.
       </p>
-      <div class="btn-container">
-        <a href="cv.pdf" class="btn" target="_blank">View CV</a>
-        <a href="cv.pdf" class="btn" download>Download CV</a>
-      </div>
+      <a href="cv.pdf" class="btn" download><i class="fa-solid fa-download"></i> Download CV</a>
     </div>
-  </main>
-
-  <footer>
-    © 2026 Nincey Infanta | All Rights Reserved.
-  </footer>
+  </div>
 
   <script>
     const toggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    if (localStorage.getItem('theme') === 'dark') {
-      body.setAttribute('data-theme', 'dark');
+    // Apply saved theme preference
+    if (localStorage.getItem('theme') === 'light') {
+      body.setAttribute('data-theme', 'light');
       toggle.classList.replace('fa-moon', 'fa-sun');
     }
 
     toggle.addEventListener('click', () => {
-      if (body.getAttribute('data-theme') === 'dark') {
+      if (body.getAttribute('data-theme') === 'light') {
         body.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
+        localStorage.setItem('theme', 'dark');
         toggle.classList.replace('fa-sun', 'fa-moon');
       } else {
-        body.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+        body.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
         toggle.classList.replace('fa-moon', 'fa-sun');
       }
     });
