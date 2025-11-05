@@ -42,7 +42,7 @@
     /* ===== MAIN CONTAINER ===== */
     .container {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       width: 90%;
       max-width: 1200px;
@@ -73,8 +73,8 @@
     /* ===== RIGHT: INTRO SECTION ===== */
     .intro-section {
       flex: 1;
-      text-align: left;
-      margin-left: 80px;
+      text-align: right;
+      margin-right: 60px; /* shifted slightly to right */
       animation: fadeIn 1.2s ease-in-out;
     }
 
@@ -84,7 +84,7 @@
     }
 
     .intro-section h1 {
-      font-size: 4rem; /* bigger */
+      font-size: 4rem;
       font-weight: 700;
       margin-bottom: 1rem;
     }
@@ -94,18 +94,19 @@
     }
 
     .intro-section h2 {
-      font-size: 2.3rem; /* slightly bigger */
+      font-size: 2.3rem;
       margin-bottom: 1.2rem;
       color: var(--text-color);
       opacity: 0.85;
     }
 
     .intro-section p {
-      font-size: 1.15rem; /* bigger paragraph */
+      font-size: 1.15rem;
       line-height: 1.9;
       max-width: 600px;
       opacity: 0.9;
       margin-bottom: 2rem;
+      margin-left: auto;
     }
 
     .btn {
@@ -119,6 +120,7 @@
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
+      transition: all 0.3s ease;
     }
 
     .btn:hover {
@@ -168,7 +170,7 @@
       }
       .intro-section {
         text-align: center;
-        margin-left: 0;
+        margin-right: 0;
       }
       .logo-section img {
         width: 250px;
@@ -213,7 +215,9 @@
         dynamic, human-centered web solutions. I strive to bridge AI and development to
         build innovative systems that truly make a difference.
       </p>
-      <a href="cv.pdf" class="btn" download><i class="fa-solid fa-download"></i> Download or View CV</a>
+      <a href="cv.pdf" class="btn" target="_blank">
+        <i class="fa-solid fa-download"></i> Download or View CV
+      </a>
     </div>
   </div>
 
