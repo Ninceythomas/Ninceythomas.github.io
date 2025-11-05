@@ -60,9 +60,13 @@
 
     .reason {
       font-size: 1.2rem;
-      color: #d6c9ff;
+      color: var(--reason-color, #d6c9ff);
       margin-bottom: 40px;
       line-height: 1.8;
+    }
+
+    body.light-mode .reason {
+      color: #4a2b80;
     }
 
     .buttons {
@@ -174,23 +178,34 @@
       margin-bottom: 30px;
     }
 
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
     .edu-item {
       background-color: #1b0a36;
       border-radius: 15px;
       padding: 25px;
-      margin-bottom: 20px;
-      width: 90%;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
       display: flex;
       align-items: center;
       gap: 20px;
+      width: 100%;
+      max-width: 500px;
+      transition: 0.3s;
+    }
+
+    .edu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(199, 125, 255, 0.5);
     }
 
     .edu-item i {
       font-size: 2.5rem;
       color: #c77dff;
+      min-width: 40px;
     }
 
     .edu-text {
@@ -216,13 +231,13 @@
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 25px;
       z-index: 10;
     }
 
     .side-nav a {
       color: #c77dff;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       transition: 0.3s;
     }
 
@@ -243,6 +258,11 @@
 
       .edu-text {
         text-align: center;
+      }
+
+      .side-nav {
+        right: 10px;
+        gap: 20px;
       }
     }
   </style>
@@ -277,22 +297,10 @@
     </div>
 
     <div class="info-grid">
-      <div class="info-card">
-        <h2>6+</h2>
-        <p>Projects Completed</p>
-      </div>
-      <div class="info-card">
-        <h2>4+</h2>
-        <p>Internships</p>
-      </div>
-      <div class="info-card">
-        <h2>8.21</h2>
-        <p>CGPA (Current)</p>
-      </div>
-      <div class="info-card">
-        <h2>AI & DS</h2>
-        <p>Area of Interest</p>
-      </div>
+      <div class="info-card"><h2>6+</h2><p>Projects Completed</p></div>
+      <div class="info-card"><h2>4+</h2><p>Internships</p></div>
+      <div class="info-card"><h2>8.21</h2><p>CGPA</p></div>
+      <div class="info-card"><h2>AI | Data Science | Cyber Security | Software Development | NLP </h2><p>Area of Interest</p></div>
     </div>
 
     <div class="skills">
@@ -302,7 +310,7 @@
         <div class="skill-item"><i class="fa-solid fa-chart-column"></i><p>Power BI</p></div>
         <div class="skill-item"><i class="fa-solid fa-square-root-variable"></i><p>NumPy</p></div>
         <div class="skill-item"><i class="fa-solid fa-database"></i><p>Pandas</p></div>
-         <div class="skill-item"><i class="fa fa-columns"></i><p>SQL</p></div>
+        <div class="skill-item"><i class="fa fa-columns"></i><p>SQL</p></div>
         <div class="skill-item"><i class="devicon-javascript-plain"></i><p>JavaScript</p></div>
         <div class="skill-item"><i class="devicon-react-original"></i><p>ReactJS</p></div>
         <div class="skill-item"><i class="devicon-nodejs-plain"></i><p>Node.js</p></div>
@@ -316,21 +324,23 @@
 
     <div class="education">
       <h2>Education</h2>
-      <div class="edu-item">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <div class="edu-text">
-          <h3>Avinashilingam Institute for Home Science and Higher Education for Women, Coimbatore</h3>
-          <p>B.E. Artificial Intelligence and Data Science | 2022 - 2026</p>
-          <p>CGPA: 8.21</p>
+      <div class="edu-grid">
+        <div class="edu-item">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="edu-text">
+            <h3>Avinashilingam Institute for Home Science and Higher Education for Women, Coimbatore</h3>
+            <p>B.E. Artificial Intelligence and Data Science | 2022 - 2026</p>
+            <p>CGPA: 8.21</p>
+          </div>
         </div>
-      </div>
 
-      <div class="edu-item">
-        <i class="fa-solid fa-school"></i>
-        <div class="edu-text">
-          <h3>St. Joseph’s Matriculation Higher Secondary School, Coimbatore</h3>
-          <p>2010 - 2022</p>
-          <p>High School (10th) - 76% | Higher Secondary (12th) - 89.5%</p>
+        <div class="edu-item">
+          <i class="fa-solid fa-school"></i>
+          <div class="edu-text">
+            <h3>St. Joseph’s Matriculation Higher Secondary School, Coimbatore</h3>
+            <p>2010 - 2022</p>
+            <p>High School (10th) - 76% | Higher Secondary (12th) - 89.5%</p>
+          </div>
         </div>
       </div>
     </div>
@@ -341,10 +351,18 @@
     const body = document.body;
     const icon = toggleBtn.querySelector('i');
 
+    // Load previous theme
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
     toggleBtn.addEventListener('click', () => {
       body.classList.toggle('light-mode');
-      icon.classList.toggle('fa-moon');
-      icon.classList.toggle('fa-sun');
+      const light = body.classList.contains('light-mode');
+      icon.classList.toggle('fa-sun', light);
+      icon.classList.toggle('fa-moon', !light);
+      localStorage.setItem('theme', light ? 'light' : 'dark');
     });
   </script>
 </body>
