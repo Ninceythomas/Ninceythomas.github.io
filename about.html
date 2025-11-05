@@ -11,9 +11,25 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
   <style>
+    :root {
+      --bg-color: #0f1115;
+      --text-color: #ffffff;
+      --accent-color: #a855f7; 
+      --button-bg: #a855f7;
+      --button-text: #ffffff;
+    }
+
+    [data-theme="light"] {
+      --bg-color: #fdfdfd;
+      --text-color: #121212;
+      --accent-color: #9333ea; /* lighter purple for light mode */
+      --button-bg: #9333ea;
+      --button-text: #fff;
+    }
+
     body {
-      background-color: #0f011e;
-      color: #fff;
+       background-color: var(--bg-color);
+       color: var(--text-color);
       font-family: 'Poppins', sans-serif;
       overflow-x: hidden;
       transition: background 0.5s, color 0.5s;
