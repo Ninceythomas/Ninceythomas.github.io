@@ -9,16 +9,16 @@
     :root {
       --bg-color: #0f1115;
       --text-color: #ffffff;
-      --accent-color: #00ff66;
-      --button-bg: #00ff66;
-      --button-text: #0f1115;
+      --accent-color: #a855f7; /* purple accent */
+      --button-bg: #a855f7;
+      --button-text: #ffffff;
     }
 
     [data-theme="light"] {
       --bg-color: #fdfdfd;
       --text-color: #121212;
-      --accent-color: #00c04b;
-      --button-bg: #00c04b;
+      --accent-color: #9333ea; /* lighter purple for light mode */
+      --button-bg: #9333ea;
       --button-text: #fff;
     }
 
@@ -62,7 +62,7 @@
       width: 400px;
       height: auto;
       border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0, 255, 102, 0.3);
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.4); /* purple glow */
       transition: transform 0.4s ease;
     }
 
@@ -74,7 +74,7 @@
     .intro-section {
       flex: 1;
       text-align: left;
-      margin-left: 80px; /* pushes content slightly to the right */
+      margin-left: 80px;
       animation: fadeIn 1.2s ease-in-out;
     }
 
@@ -84,7 +84,7 @@
     }
 
     .intro-section h1 {
-      font-size: 3.5rem;
+      font-size: 4rem; /* bigger */
       font-weight: 700;
       margin-bottom: 1rem;
     }
@@ -94,15 +94,15 @@
     }
 
     .intro-section h2 {
-      font-size: 2rem;
+      font-size: 2.3rem; /* slightly bigger */
       margin-bottom: 1.2rem;
       color: var(--text-color);
       opacity: 0.85;
     }
 
     .intro-section p {
-      font-size: 1rem;
-      line-height: 1.8;
+      font-size: 1.15rem; /* bigger paragraph */
+      line-height: 1.9;
       max-width: 600px;
       opacity: 0.9;
       margin-bottom: 2rem;
@@ -115,7 +115,7 @@
       background: transparent;
       color: var(--accent-color);
       border: 2px solid var(--accent-color);
-      padding: 0.8rem 1.6rem;
+      padding: 0.9rem 1.8rem;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
@@ -174,10 +174,13 @@
         width: 250px;
       }
       .intro-section h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
       .intro-section h2 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+      }
+      .intro-section p {
+        font-size: 1rem;
       }
       .nav-icons {
         right: 1rem;
@@ -210,7 +213,7 @@
         dynamic, human-centered web solutions. I strive to bridge AI and development to
         build innovative systems that truly make a difference.
       </p>
-      <a href="cv.pdf" class="btn" download><i class="fa-solid fa-download"></i> Download CV</a>
+      <a href="cv.pdf" class="btn" download><i class="fa-solid fa-download"></i> Download or View CV</a>
     </div>
   </div>
 
