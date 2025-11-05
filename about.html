@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me | Nincey Infanta</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" type="image/png">
+  <!-- ====== FAVICON ====== -->
+  <link rel="icon" type="image/png" href="logo.png">
 
-  <!-- Font & Icons -->
+  <!-- ====== FONTS & ICONS ====== -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -49,7 +49,15 @@
       font-size: 1.2rem;
       line-height: 1.8;
       color: #d6c9ff;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+    }
+
+    .reason-hire {
+      font-size: 1.1rem;
+      color: #e7dcff;
+      margin-bottom: 50px;
+      line-height: 1.8;
+      padding: 0 10px;
     }
 
     .buttons {
@@ -74,7 +82,7 @@
       box-shadow: 0 0 20px #8a2be2;
     }
 
-    /* Info Grid */
+    /* ===== INFO GRID ===== */
     .info-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -105,7 +113,7 @@
       color: #d6c9ff;
     }
 
-    /* Skills Section */
+    /* ===== SKILLS ===== */
     .skills {
       margin-bottom: 80px;
     }
@@ -149,7 +157,7 @@
       font-weight: 500;
     }
 
-    /* Education Section */
+    /* ===== EDUCATION ===== */
     .education {
       text-align: center;
       margin-bottom: 60px;
@@ -165,11 +173,20 @@
       background-color: #1b0a36;
       border-radius: 15px;
       padding: 25px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       width: 90%;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
+      position: relative;
+    }
+
+    .edu-item i {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #c77dff;
+      font-size: 2rem;
     }
 
     .edu-item h3 {
@@ -183,7 +200,7 @@
       margin-top: 8px;
     }
 
-    /* Right side nav */
+    /* ===== SIDE NAV ===== */
     .side-nav {
       position: fixed;
       top: 50%;
@@ -206,6 +223,23 @@
       transform: scale(1.2);
     }
 
+    /* ===== THEME TOGGLE ===== */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      color: #c77dff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+      transition: 0.3s;
+    }
+
+    .theme-toggle:hover {
+      color: #fff;
+      transform: rotate(20deg);
+    }
+
     @media (max-width: 768px) {
       .buttons {
         flex-direction: column;
@@ -223,7 +257,12 @@
 </head>
 
 <body>
-  <!-- Side Navigation -->
+  <!-- ===== THEME TOGGLE ===== -->
+  <div class="theme-toggle" onclick="toggleTheme()">
+    <i class="fa-solid fa-moon"></i>
+  </div>
+
+  <!-- ===== SIDE NAVIGATION ===== -->
   <div class="side-nav">
     <a href="index.html"><i class="fa-solid fa-house"></i></a>
     <a href="about.html"><i class="fa-solid fa-user"></i></a>
@@ -236,7 +275,12 @@
 
   <div class="container">
     <p class="about-summary">
-      I’m Nincey Infanta, a passionate and detail-oriented <strong>Data Scientist</strong> and <strong>Full-Stack Developer</strong> with a strong drive to solve real-world problems using AI and technology. I love creating intelligent systems, building data-driven solutions, and crafting responsive websites that blend creativity with functionality.
+      I’m <strong>Nincey Infanta</strong>, a passionate and detail-oriented <strong>Data Scientist</strong> and <strong>Full-Stack Developer</strong> with a strong drive to solve real-world problems using AI and technology. I love creating intelligent systems, building data-driven solutions, and crafting responsive websites that blend creativity with functionality.
+    </p>
+
+    <p class="reason-hire">
+      <strong>Why Hire Me?</strong><br>
+      I’m a highly organized and creative problem-solver who thrives on turning complex ideas into meaningful digital solutions. With hands-on experience in AI projects, data visualization, and full-stack applications, I bring innovation, reliability, and technical expertise to every task.
     </p>
 
     <div class="buttons">
@@ -245,30 +289,11 @@
     </div>
 
     <div class="info-grid">
-      <div class="info-card">
-        <h2>6+</h2>
-        <p>Projects Completed</p>
-      </div>
-      <div class="info-card">
-        <h2>4+</h2>
-        <p>Internships</p>
-      </div>
-      <div class="info-card">
-        <h2>8.21</h2>
-        <p>CGPA (Current)</p>
-      </div>
-      <div class="info-card">
-        <h2>2022 - 2026</h2>
-        <p>Graduation Year</p>
-      </div>
-      <div class="info-card">
-        <h2>AI & DS</h2>
-        <p>Area of Interest</p>
-      </div>
-      <div class="info-card">
-        <h2>Coimbatore</h2>
-        <p>Based in</p>
-      </div>
+      <div class="info-card"><h2>6+</h2><p>Projects Completed</p></div>
+      <div class="info-card"><h2>4+</h2><p>Internships</p></div>
+      <div class="info-card"><h2>8.21</h2><p>CGPA (Current)</p></div>
+      <div class="info-card"><h2>2022 - 2026</h2><p>Graduation Year</p></div>
+      <div class="info-card"><h2>AI & DS</h2><p>Area of Interest</p></div>
     </div>
 
     <div class="skills">
@@ -292,17 +317,25 @@
     <div class="education">
       <h2>Education</h2>
       <div class="edu-item">
+        <i class="fa-solid fa-graduation-cap"></i>
         <h3>Avinashilingam Institute for Home Science and Higher Education for Women, Coimbatore</h3>
         <p>BE Artificial Intelligence and Data Science | 2022 - 2026</p>
         <p>CGPA: 8.21</p>
       </div>
 
       <div class="edu-item">
+        <i class="fa-solid fa-school"></i>
         <h3>St. Joseph’s Matriculation Higher Secondary School, Coimbatore</h3>
         <p>2010 - 2022</p>
         <p>High School (10th) - 76% | Higher Secondary (12th) - 89.5%</p>
       </div>
     </div>
   </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
 </body>
 </html>
