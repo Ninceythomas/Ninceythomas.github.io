@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications & Achievements | Nincey Infanta</title>
+<link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+    --bg-color: #0f1115;
+    --text-color: #ffffff;
+    --accent-color: #a855f7;
+    --card-bg: #262627;
+    --muted-text: #d6c9ff;
+    --overlay-bg: rgba(168, 85, 247, 0.9);
+    --box-shadow: 0 8px 18px rgba(138, 43, 226, 0.25),
+                0 0 10px rgba(199, 125, 255, 0.15);
+    --background: #7e22ce;
+  }
+
+  [data-theme="light"],
+  body.light-mode {
+    --bg-color: #fdfdfd;
+    --text-color: #0d0d0e;
+    --accent-color: #0e2794;
+    --card-bg: #f2f0ff;
+    --muted-text: #1a046d;
+    --overlay-bg: rgba(0, 33, 223, 0.8);
+    --box-shadow: 0 8px 18px rgba(37, 40, 219, 0.25),
+                0 0 10px rgba(125, 160, 255, 0.15);
+    --background: #2724e6;
+  }
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* ===== RIGHT SIDE ICON MENU ===== */
+  .nav-icons {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 100;
+  }
+
+  .nav-icons a, .nav-icons i {
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 1.4rem;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+
+  .nav-icons a:hover, .nav-icons i:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+  }
+
+  .nav-icons a.active {
+    background: var(--accent-color);
+  }
+
+    section {
+      padding: 60px 8%;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 2rem;
+      color: var(--text-color);
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--muted-text);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      margin-bottom: 10px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--overlay-bg);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .card:hover .overlay {
+      opacity: 1;
+    }
+
+    .explore-btn {
+      display: block;
+      width: fit-content;
+      margin: 40px auto 0;
+      background: var(--accent-color);
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .explore-btn:hover {
+      background: var(--background);
+      transform: translateY(-2px);
+    }
+
+
+    /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    background: var(--card-bg);
+    box-shadow: 0 4px 10px rgba(10, 10, 10, 0.25);
+  }
+
+    @media screen and (max-width: 768px) {
+      section {
+        padding: 40px 5%;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .card-content h3 {
+        font-size: 1.1rem;
+      }
+
+      .nav-icons {
+        right: 1rem;
+        gap: 1rem;
+      }
+      .nav-icons a,
+      .nav-icons i {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== RIGHT SIDE ICON MENU ===== -->
+  <div class="nav-icons">
+    <a href="index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <a href="about.html" title="About Me"><i class="fa-solid fa-user"></i></a>
+    <a href="projects.html" title="Projects"><i class="fa-solid fa-diagram-project"></i></a>
+    <a href="internships&experience.html" class="active" title="Experience"><i class="fa-solid fa-briefcase"></i></a>
+    <a href="certifications.html" title="Achievements"><i class="fa-solid fa-award"></i></a>
+    <a href="contact.html" title="Contact"><i class="fa-solid fa-envelope"></i></a>
+    <i class="fa-solid fa-moon" id="theme-toggle" title="Toggle Theme"></i>
+  </div>
+
+  <!-- ===== ACHIEVEMENTS SECTION ===== -->
+  <section id="achievements">
+    <h1>Achievements</h1>
+    <p>
+      Recognized for excellence in academics, leadership, and innovation. These achievements reflect dedication, problem-solving, and consistent growth in both technical and professional fields.
+    </p>
+
+    <div class="grid-container">
+      <div class="card">
+        <img src="sih2024.jpeg" alt="sih finalist">
+        <div class="overlay" onclick="window.open('https://drive.google.com/file/d/1UMjfPE49DGIFZFsWizHF9QfqhDNjwBSd/view?usp=drive_link')">View Certificate</div>
+        <div class="card-content">
+          <h3>Smart India Hackathon 2024 Finalist - Team Leader </h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="cd.jpg" alt="Award">
+        <div class="overlay" onclick="window.open('https://drive.google.com/file/d/1DLTYIQQoyWY9h1QtVZ4-mamTEoe1JoGc/view?usp=drive_link')">View Certificate</div>
+        <div class="card-content">
+          <h3>National Symposium - Code Debugging (3rd Place)</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="nep.png" alt="NEP Ambassador">
+        <div class="overlay" onclick="window.open('#', '_blank')">View Certificate</div>
+        <div class="card-content">
+
+          <h3>National Education Policy (NEP 2020) Ambassador</h3>
+          <i>*yet to be received*</i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COURSES SECTION ===== -->
+  <section id="courses">
+    <h1>Courses</h1>
+
+    <div class="grid-container">
+
+    <div class="card">
+      <img src="ibm.jpg" alt="IBM AI">
+      <div class="overlay" onclick="window.open('https://drive.google.com/file/d/1MpiTBLD18L4mjUWrXWjCDmxKHYuaetO2/view?usp=drive_link')">View Certificate</div>
+      <div class="card-content">
+        <h3>IBM Python for AI & Data Science</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="OCIG.jpg" alt="Oracle AI">
+      <div class="overlay" onclick="window.open('https://drive.google.com/file/d/1mijp7J7n-rkC1LVDEA2i-h2KfkJC1ias/view?usp=drive_link')">View Certificate</div>
+      <div class="card-content">
+        <h3>Oracle Generative AI Professional 2025</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="OCIM.jpeg" alt="OCI MC">
+      <div class="overlay" onclick="window.open('https://drive.google.com/file/d/16Q6-aedO9nu1FnwlSvE3IeVwSKirOz51/view?usp=sharing')">View Certificate</div>
+      <div class="card-content">
+        <h3>Oracle Multicloud Architect Professional 2025</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="meta.png" alt="META IAMAD">
+      <div class="overlay" onclick="window.open('https://drive.google.com/file/d/1Au3beg-7QE7iJRKU1gGVVJhPs1b1AOC2/view?usp=drive_link')">View Certificate</div>
+      <div class="card-content">
+        <h3>Meta IAMAD</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="nptel.png" alt="NPTEL DBMS">
+      <div class="overlay" onclick="window.open('https://drive.google.com/file/d/1hWUvcwUA53binJtEA6UcVBrsp24CWTo_/view?usp=drive_link')">View Certificate</div>
+      <div class="card-content">
+        <h3>NPTEL DBMS</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="nptel.png" alt="NPTEL IoT">
+      <div class="overlay" onclick="window.open('https://drive.google.com/file/d/1iUVFKmIGOdrNj-kvwEL8dSAy4l27AHs-/view?usp=drive_link')">View Certificate</div>
+      <div class="card-content">
+        <h3>NPTEL Introduction to IoT</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="nptel.png" alt="NPTEL Industry 4.0">
+      <div class="overlay" onclick="window.open('https://drive.google.com/file/d/1WsPX6ObxHm2vYbv8kb768QLLjdofutmp/view?usp=drive_link')">View Certificate</div>
+      <div class="card-content">
+        <h3>NPTEL Introduction to Industry 4.0 & Industrial IoT</h3>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="acmegrade.jpeg" alt="DS">
+      <div class="overlay" onclick="window.open('https://drive.google.com/file/d/1lOBUEy2xJTNz1mjYMXBkkPGzawr9MvD5/view?usp=sharing')">View Certificate</div>
+      <div class="card-content">
+        <h3>Acmegrade Data Science Training</h3>
+      </div>
+    </div>
+    
+
+  </div>
+
+    <a href="https://drive.google.com/drive/folders/1eSewnknifZEkcNgyoknuhWEVnZoqb1T9?usp=drive_link" target="_blank" class="explore-btn">
+      View more courses I completed →
+    </a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2026 Nincey Infanta |  Portfolio</p>
+  </footer>
+
+  <!-- ===== ICONS (FontAwesome) ===== -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- ===== THEME TOGGLE SCRIPT ===== -->
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Apply saved theme preference
+    if (localStorage.getItem('theme') === 'light') {
+      body.setAttribute('data-theme', 'light');
+      toggle.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggle.addEventListener('click', () => {
+      if (body.getAttribute('data-theme') === 'light') {
+        body.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+        toggle.classList.replace('fa-sun', 'fa-moon');
+      } else {
+        body.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        toggle.classList.replace('fa-moon', 'fa-sun');
+      }
+    });
+  </script>
+</body>
+</html>

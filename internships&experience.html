@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience | Nincey Infanta</title>
+  <meta name="description" content="Experience and internships of Nincey Infanta — Data Scientist, AI Engineer, and Full Stack Developer." />
+
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+  :root {
+    --bg-color: #0f1115;
+    --text-color: #ffffff;
+    --accent-color: #a855f7;
+    --card-bg: #262627;
+    --muted-text: #d6c9ff;
+    --overlay-bg: rgba(168, 85, 247, 0.9);
+    --box-shadow: 0 8px 18px rgba(138, 43, 226, 0.25),
+                0 0 10px rgba(199, 125, 255, 0.15);
+  }
+
+  [data-theme="light"],
+  body.light-mode {
+    --bg-color: #fdfdfd;
+    --text-color: #0d0d0e;
+    --accent-color: #0e2794;
+    --card-bg: #f2f0ff;
+    --muted-text: #1a046d;
+    --overlay-bg: rgba(0, 33, 223, 0.8);
+    --box-shadow: 0 8px 18px rgba(37, 40, 219, 0.25),
+                0 0 10px rgba(125, 160, 255, 0.15);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  /* ===== RIGHT SIDE ICON MENU ===== */
+  .nav-icons {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 100;
+  }
+
+  .nav-icons a, .nav-icons i {
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 1.4rem;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+
+  .nav-icons a:hover, .nav-icons i:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+  }
+
+  .nav-icons a.active {
+    background: var(--accent-color);
+  }
+
+  /* ===== EXPERIENCE SECTION ===== */
+  main.section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding-right: 6rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    background: var(--muted-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+  }
+
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ===== EXPERIENCE CARDS ===== */
+  .experience-card {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    
+  }
+
+  .experience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(199, 125, 255, 0.4),
+                0 0 45px rgba(168, 85, 247, 0.3);
+  }
+
+  .experience-card img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+  }
+
+  .experience-content {
+    padding: 1.2rem 1.5rem 1.5rem;
+  }
+
+  .experience-content h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+  }
+
+  .experience-content .time {
+    font-weight: 600;
+    color: var(--muted-text);
+    margin-bottom: 0.8rem;
+  }
+
+  .experience-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* ===== OVERLAY HOVER EFFECT ===== */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-bg);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    text-transform: uppercase;
+  }
+
+  .experience-card:hover .overlay {
+    opacity: 1;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    background: var(--card-bg);
+    box-shadow: 0 4px 10px rgba(5, 5, 5, 0.25);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    main.section {
+      width: 95%;
+      padding-right: 4rem;
+    }
+    main {
+        width: 95%;
+        padding-right: 4rem;
+      }
+      .nav-icons {
+        right: 1rem;
+        gap: 1rem;
+      }
+      .nav-icons a,
+      .nav-icons i {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+  }
+
+  @media (max-width: 768px) {
+    .experience-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+  }
+
+  @media (max-width: 500px) {
+    .experience-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!-- ===== RIGHT SIDE ICON MENU ===== -->
+  <div class="nav-icons">
+    <a href="index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <a href="about.html" title="About Me"><i class="fa-solid fa-user"></i></a>
+    <a href="projects.html" title="Projects"><i class="fa-solid fa-diagram-project"></i></a>
+    <a href="internships&experience.html" class="active" title="Experience"><i class="fa-solid fa-briefcase"></i></a>
+    <a href="certifications.html" title="Achievements"><i class="fa-solid fa-award"></i></a>
+    <a href="contact.html" title="Contact"><i class="fa-solid fa-envelope"></i></a>
+    <i class="fa-solid fa-moon" id="theme-toggle" title="Toggle Theme"></i>
+  </div>
+
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <main class="section experience">
+    <h1 class="section-title">Experiences & Internships</h1>
+    <div class="experience-grid">
+
+      <!-- Card 1 -->
+      <div class="experience-card" onclick="window.open('#','_blank')">
+        <img src="labmentix.jpeg" alt="Labmentix" />
+        <div class="overlay"><i class="fa-solid fa-certificate"></i><span>View Certificate</span> </div>
+        <div class="experience-content">
+          <h2><i class="fas fa-brain"></i> AI & ML Intern — Labmentix</h2>
+          <p class="time">Sep 2025 – Present</p>
+          <p>Developing and training AI and ML models for real-world data problems using Python, TensorFlow, and Scikit-learn.<br><i>*yet to be provided*</i></p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="experience-card" onclick="window.open('https://drive.google.com/file/d/140mVPHOZbCoZb84F10_wVkucdt-_SyNt/view?usp=drive_link')">
+        <img src="strackit.jpeg" alt="Strakit Pvt Ltd" />
+        <div class="overlay"><i class="fa-solid fa-certificate"></i><span>View Certificate</span></div>
+        <div class="experience-content">
+          <h2><i class="fas fa-laptop-code"></i> Full Stack Developer Intern — Strakit Pvt Ltd</h2>
+          <p class="time">May 2025 – Oct 2025</p>
+          <p>Developed an e-commerce web application using JS frameworks, GraphQL servers, and real-time databases with AI personalization. <i>*Completion letter provided for 1 month but worked for more than a month*</i></p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="experience-card" onclick="window.open('https://drive.google.com/file/d/11nmIARIG6Rwo7zBILKbz6usdLcROUF__/view?usp=drive_link')">
+        <img src="nullclass.png" alt="NullClass" />
+        <div class="overlay"><i class="fa-solid fa-certificate"></i><span>View Certificate</span></div>
+        <div class="experience-content">
+          <h2><i class="fas fa-chart-line"></i> Data Analyst Intern — NullClass EduTech Pvt Ltd</h2>
+          <p class="time">Sep 2024 – Nov 2024</p>
+          <p>Designed and developed a Twitter Analytics Dashboard using Power BI for real-time insights.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="experience-card" onclick="window.open('https://drive.google.com/file/d/1MW9rqf-pqjBKHALgYOOlwG1v1c0miwZ1/view?usp=drive_link')">
+        <img src="nxtlogic.jpeg" alt="NXT Logic" />
+        <div class="overlay"><i class="fa-solid fa-certificate"></i><span>View Certificate</span></div>
+        <div class="experience-content">
+          <h2><i class="fas fa-database"></i> Data Analysis Intern — NXT Logic</h2>
+          <p class="time">Jun 2024</p>
+          <p>Worked on data analysis and AI-based solutions to enhance business intelligence.</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="experience-card" onclick="window.open('https://drive.google.com/file/d/14khR3wg9TU2i9GO82LyYfUUVwRpSArIW/view?usp=drive_link')">
+        <img src="prodigy.jpeg" alt="Prodigy Infotech" />
+        <div class="overlay"><i class="fa-solid fa-certificate"></i><span>View Certificate</span></div>
+        <div class="experience-content">
+          <h2><i class="fas fa-robot"></i> Machine Learning Intern — Prodigy Infotech</h2>
+          <p class="time">May 2024</p>
+          <p>Implemented ML algorithms for predictive modeling using Python and scikit-learn, generating actionable insights.</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="experience-card" onclick="window.open('https://drive.google.com/file/d/1-wRSTQJQH9f4I9DFJyL59HYhSBDVP6tF/view?usp=drive_link')">
+        <img src="lgm.jpg" alt="Lets Grow More" />
+        <div class="overlay"><i class="fa-solid fa-certificate"></i><span>View Certificate</span></div>
+        <div class="experience-content">
+          <h2><i class="fas fa-code"></i> Java Developer Intern — Lets Grow More</h2>
+          <p class="time">Mar 2024</p>
+          <p>Worked on developing and maintaining Java-based applications with focus on object-oriented principles.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2026 Nincey Infanta | Portfolio</p>
+  </footer>
+
+ <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Apply saved theme preference
+    if (localStorage.getItem('theme') === 'light') {
+      body.setAttribute('data-theme', 'light');
+      toggle.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggle.addEventListener('click', () => {
+      if (body.getAttribute('data-theme') === 'light') {
+        body.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+        toggle.classList.replace('fa-sun', 'fa-moon');
+      } else {
+        body.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        toggle.classList.replace('fa-moon', 'fa-sun');
+      }
+    });
+  </script>
+</body>
+</html>
