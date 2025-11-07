@@ -17,21 +17,23 @@
       --accent-color: #a855f7; 
       --button-bg: #a855f7;
       --button-text: #ffffff;
-      --card-bg: #1b0a36;
+      --card-bg: #262627;
       --muted-text: #d6c9ff;
       --icon-color: #c77dff;
+      --background: linear-gradient(90deg, #8a2be2, #c77dff);
     }
 
     [data-theme="light"],
     body.light-mode {
       --bg-color: #fdfdfd;
-      --text-color: #121212;
-      --accent-color: #9333ea;
-      --button-bg: #9333ea;
+      --text-color: rgb(13, 13, 14);
+      --accent-color: #0e2794;
+      --button-bg: #0021dfd8;
       --button-text: #fff;
       --card-bg: #f2f0ff;
-      --muted-text: #4a148c;
-      --icon-color: #9333ea; /* darker color for readability in light mode */
+      --muted-text: #1a046d;
+      --icon-color: rgb(0, 83, 192); /* darker color for readability in light mode */
+      --background: linear-gradient(90deg, #02035e, #5c91f3);
     }
 
     body {
@@ -45,7 +47,8 @@
     h1 {
       text-align: center;
       font-size: 3rem;
-      background: linear-gradient(90deg, #8a2be2, #c77dff);
+      background: var(--background);
+      color :var(--accent-color);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-top: 60px;
@@ -129,7 +132,7 @@
 
     .info-card h2 {
       font-size: 2.2rem;
-      color: var(--accent-color);
+      color: var(--muted-text);
     }
 
     .info-card p {
@@ -237,46 +240,60 @@
     }
 
     .side-nav {
-      position: fixed;
-      top: 50%;
-      right: 25px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      z-index: 10;
-    }
+    position: fixed;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    z-index: 100;
+  }
 
-    .side-nav a {
-      color:var(--icon-color);
-      font-size: 1.5rem;
-      transition: 0.3s;
-    }
+  .side-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 1.2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+  }
 
-    .side-nav a:hover {
-      color:var(--accent-color);
-      transform: scale(1.2);
-    }
+  .side-nav a:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--accent-color);
+  }
 
     @media (max-width: 768px) {
-      .info-card { width: 90%; height: auto; }
-      .info-wide { width: 90%; }
-      .buttons { flex-direction: column; }
-      .edu-item { flex-direction: column; text-align: center; }
-      .side-nav { right: 10px; gap: 20px; }
+    .side-nav {
+      right: 10px;
+      gap: 20px;
     }
+    .side-nav a {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  }
   </style>
 </head>
 
 <body>
   <div class="side-nav">
-    <a href="index.html"><i class="fa-solid fa-house"></i></a>
-    <a href="about.html"><i class="fa-solid fa-user"></i></a>
-    <a href="internship.html"><i class="fa-solid fa-briefcase"></i></a>
-    <a href="achievements.html"><i class="fa-solid fa-trophy"></i></a>
-    <a href="contact.html"><i class="fa-solid fa-envelope"></i></a>
-    <a id="theme-toggle"><i class="fa-solid fa-moon"></i></a>
-  </div>
+  <a href="index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+  <a href="about.html" title="About"><i class="fa-solid fa-user"></i></a>
+  <a href="projects.html" title="Projects"><i class="fa-solid fa-diagram-project"></i></a>
+  <a href="internship.html" title="Internships"><i class="fa-solid fa-briefcase"></i></a>
+  <a href="achievements.html" title="Achievements"><i class="fa-solid fa-trophy"></i></a>
+  <a href="contact.html" title="Contact"><i class="fa-solid fa-envelope"></i></a>
+  <a id="theme-toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></a>
+</div>
 
   <h1>About Me</h1>
 
@@ -285,7 +302,7 @@
       I’m Nincey Infanta, a passionate and detail-oriented <strong>Data Scientist</strong> and <strong>Full-Stack Developer</strong> with a strong drive to solve real-world problems using AI and technology. I love creating intelligent systems, building data-driven solutions, and crafting responsive websites that blend creativity with functionality.
     </p>
 
-    <h2 style="color:#c77dff; margin-bottom:20px;">Reason to Hire Me</h2>
+    <h2 style="color:var(--accent-color); margin-bottom:20px;">Reason to Hire Me</h2>
     <p class="reason">
       I am a quick learner, highly organized, and proactive individual who thrives in collaborative environments. My ability to merge analytical thinking with creative problem-solving allows me to deliver impactful results. I value precision, innovation, and teamwork — making me a strong fit for any data-driven and development-focused role.
     </p>
@@ -302,7 +319,7 @@
         <div class="info-card"><h2>8.21</h2><p>CGPA</p></div>
       </div>
       <div class="info-wide">
-        <h3 style="color:#c77dff; margin-bottom:8px;">Areas of Interest</h3>
+        <h3 style="color:var(--accent-color); margin-bottom:8px;">Areas of Interest</h3>
         <p>Artificial Intelligence • Data Science • Cyber Security • Software Development • Natural Language Processing (NLP)</p>
       </div>
     </div>
