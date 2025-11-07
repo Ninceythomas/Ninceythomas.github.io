@@ -7,20 +7,31 @@
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    :root {
+:root {
       --bg-color: #0f1115;
       --text-color: #ffffff;
       --accent-color: #a855f7; 
       --button-bg: #a855f7;
       --button-text: #ffffff;
+      --card-bg: #262627;
+      --muted-text: #d6c9ff;
+      --icon-color: #c77dff;
+      --background: linear-gradient(90deg, #8a2be2, #c77dff);
+      --box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
     }
 
-    [data-theme="light"] {
+    [data-theme="light"],
+    body.light-mode {
       --bg-color: #fdfdfd;
-      --text-color: #121212;
-      --accent-color: #9333ea; /* lighter purple for light mode */
-      --button-bg: #9333ea;
+      --text-color: rgb(13, 13, 14);
+      --accent-color: #0e2794;
+      --button-bg: #0021dfd8;
       --button-text: #fff;
+      --card-bg: #f2f0ff;
+      --muted-text: #1a046d;
+      --icon-color: rgb(0, 83, 192); /* darker color for readability in light mode */
+      --background: linear-gradient(90deg, #02035e, #5c91f3);
+      --box-shadow: 0 0 25px rgba(1, 22, 145, 0.993);
     }
 
     * {
@@ -63,7 +74,7 @@
       width: 500px;
       height: auto;
       border-radius: 20px;
-      box-shadow: 0 0 25px rgba(168, 85, 247, 0.4); /* purple glow */
+      box-shadow: var(--box-shadow);
       transition: transform 0.4s ease;
     }
 
@@ -132,36 +143,36 @@
 
     /* ===== VERTICAL ICON MENU ===== */
     .nav-icons {
-      position: fixed;
-      right: 2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      z-index: 100;
-    }
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 100;
+}
 
-    .nav-icons a,
-    .nav-icons i {
-      background: #1b1f24;
-      color: var(--text-color);
-      font-size: 1.4rem;
-      width: 45px;
-      height: 45px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      transition: 0.3s ease;
-    }
+.nav-icons a,
+.nav-icons i {
+  background: #1a1a1a;
+  color:  #ffffff;
+  font-size: 1.4rem;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
 
-    .nav-icons a:hover,
-    .nav-icons i:hover {
-      background: var(--accent-color);
-      color: var(--button-text);
-      transform: scale(1.1);
-    }
+.nav-icons a:hover,
+.nav-icons i:hover {
+  background: var(--accent-color);
+  color: var(--button-text);
+  transform: scale(1.1);
+}
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
@@ -186,22 +197,29 @@
         font-size: 1rem;
       }
       .nav-icons {
-        right: 1rem;
-      }
+    right: 1rem;
+    gap: 1rem;
+  }
+  .nav-icons a,
+  .nav-icons i {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
     }
   </style>
 </head>
 <body>
   <!-- NAV ICONS -->
   <div class="nav-icons">
-    <a href="index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-    <a href="about.html" title="About Me"><i class="fa-solid fa-user"></i></a>
-    <a href="projects.html" title="Projects"><i class="fa-solid fa-diagram-project"></i></a>
-    <a href="experience.html" title="Experience"><i class="fa-solid fa-briefcase"></i></a>
-    <a href="achievements.html" title="Achievements"><i class="fa-solid fa-award"></i></a>
-    <a href="contact.html" title="Contact"><i class="fa-solid fa-envelope"></i></a>
-    <i class="fa-solid fa-moon" id="theme-toggle" title="Toggle Theme"></i>
-  </div>
+  <a href="index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+  <a href="about.html" title="About Me"><i class="fa-solid fa-user"></i></a>
+  <a href="projects.html" title="Projects"><i class="fa-solid fa-diagram-project"></i></a>
+  <a href="experience.html" title="Experience"><i class="fa-solid fa-briefcase"></i></a>
+  <a href="achievements.html" title="Achievements"><i class="fa-solid fa-award"></i></a>
+  <a href="contact.html" title="Contact"><i class="fa-solid fa-envelope"></i></a>
+  <i class="fa-solid fa-moon" id="theme-toggle" title="Toggle Theme"></i>
+</div>
 
   <!-- MAIN CONTENT -->
   <div class="container">
