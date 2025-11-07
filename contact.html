@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Me | Nincey Infanta</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <meta name="description" content="Contact page of Nincey Infanta — Data Scientist, AI Engineer, and Full Stack Developer." />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ===== THEME COLORS ===== */
+    :root {
+      --bg-color: #0f1115;
+      --text-color: #ffffff;
+      --accent-color: #a855f7;
+      --button-bg: #a457ec;
+      --button-text: #ffffff;
+      --card-bg: #1c1c1c;
+      --muted-text: #d6c9ff;
+      --icon-color: #b388ff;
+      --highlight-color: #b388ff;
+      --box-shadow: 0 6px 20px rgba(111, 0, 255, 0.678);
+      --background: linear-gradient(45deg, #8305b4, #cf74f3);
+    }
+
+    [data-theme="light"],
+    body.light-mode {
+      --bg-color: #fdfdfd;
+      --text-color: #0d0d0d;
+      --accent-color: #061e88;
+      --button-bg: #0021dfd8;
+      --button-text: #ffffff;
+      --card-bg: #f0f3ff;
+      --muted-text: #1a046d;
+      --icon-color: #2b4eff;
+      --highlight-color: #2b4eff;
+      --box-shadow: 0 6px 20px rgba(12, 8, 240, 0.712);
+      --background: linear-gradient(45deg, #02006d, #7593f5);
+    }
+
+    /* ===== BASE STYLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    h1.page-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--highlight-color);
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
+      text-color : var(--accent-color);
+    }
+
+    /* ===== CONTACT CONTAINER ===== */
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 3rem;
+      flex-wrap: wrap;
+      padding: 0 8%;
+      padding-bottom: 6rem;
+    }
+
+    .contact-info-box,
+    .contact-form-box {
+      flex: 1 1 420px;
+      max-width: 520px;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: var(--box-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-info-box:hover,
+    .contact-form-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    /* ===== LEFT INFO BOX ===== */
+    .contact-info-box h2 {
+      font-size: 1.8rem;
+      color: var(--highlight-color);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info-box p {
+      font-size: 1rem;
+      color: var(--muted-text);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-intro {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  
+}
+
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+      font-size: 1.05rem;
+      color: var(--text-color);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.8rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .info-item i {
+      margin-right: 1rem;
+      color: var(--icon-color);
+      font-size: 1.4rem;
+      transition: color 0.3s ease;
+    }
+
+    .info-item:hover i {
+      color: var(--accent-color);
+    }
+
+    /* ===== RIGHT FORM BOX ===== */
+    .contact-form-box form {
+      display: flex;
+      flex-direction: column;
+      height: 370px;
+    }
+
+    .contact-form-box input,
+    .contact-form-box textarea {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-color);
+      border: 1px solid var(--muted-text);
+      border-radius: 0.6rem;
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      outline: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form-box input:focus,
+    .contact-form-box textarea:focus {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: var(--accent-color);
+    }
+
+    .contact-form-box button {
+      border: none;
+      padding: 1rem;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 0.6rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      background: var(--background);
+      font-size: 1.05rem;
+    }
+
+    .contact-form-box button:hover {
+      transform: scale(1.05);
+      box-shadow: var(--box-shadow);
+    }
+
+    /* ===== NAV ICONS ===== */
+    .nav-icons {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      z-index: 100;
+    }
+
+    .nav-icons a,
+    .nav-icons i {
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 1.4rem;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-icons a:hover,
+    .nav-icons i:hover {
+      background: var(--accent-color);
+      transform: scale(1.1);
+    }
+
+    .nav-icons a.active {
+      background: var(--accent-color);
+    }
+
+    /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    background: var(--card-bg);
+    box-shadow: 0 4px 10px rgba(138, 43, 226, 0.25);
+  }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .contact-container {
+        gap: 2rem;
+        padding: 0 5%;
+      }
+
+      .contact-info-box,
+      .contact-form-box {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1.page-title {
+        font-size: 2rem;
+        margin-top: 2rem;
+      }
+
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 5%;
+      }
+
+      .contact-info-box,
+      .contact-form-box {
+        width: 100%;
+      }
+
+      .nav-icons {
+        right: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Right Side Nav -->
+  <div class="nav-icons">
+    <a href="index.html"><i class="fas fa-home"></i></a>
+    <a href="about.html"><i class="fas fa-user"></i></a>
+    <a href="projects.html"><i class="fas fa-diagram-project"></i></a>
+    <a href="internships&experience.html"><i class="fas fa-briefcase"></i></a>
+    <a href="certifications.html"><i class="fas fa-award"></i></a>
+    <a href="contact.html" class="active"><i class="fas fa-envelope"></i></a>
+    <i class="fas fa-moon" id="theme-toggle" style="cursor:pointer;"></i>
+  </div>
+
+  <!-- Page Title -->
+  <h1 class="page-title">Contact Me</h1>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact-container">
+      <!-- Left Info Box -->
+      <div class="contact-info-box">
+        <h2>Let's Connect</h2>
+        <p>
+          As a passionate and evolving AI Engineer, Data Scientist, and Full Stack Developer,
+          I’m actively seeking opportunities to contribute my skills.  
+          If you'd like to collaborate or have any questions, feel free to reach out.
+        </p>
+        <div class="info-item"><i class="fas fa-envelope"></i><span>iamnincey@gmail.com</span></div>
+        <div class="info-item"><i class="fas fa-phone"></i><span>+91 9600522070</span></div>
+        <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>Coimbatore, Tamil Nadu, India</span></div>
+        <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>Preferred Location:Bangalore, India</span></div>
+      </div>
+
+      <!-- Right Form -->
+      <div class="contact-form-box">
+        <p class="contact-intro">I’d love to hear from you ! fill out the form below to get in touch!</p>
+
+        <form id="contact-form">
+          <input type="text" id="name" name="from_name" placeholder="Your Name" required />
+          <input type="email" id="email" name="reply_to" placeholder="Your Email" required />
+          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2026 Nincey Infanta | Portfolio</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("ZKL0Qk55MHf6TCpBG");
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_qpb8xce', 'template_j4dsd1k', this)
+        .then(function () {
+          alert(" Message sent successfully!");
+          document.getElementById("contact-form").reset();
+        }, function (error) {
+          alert(" Failed to send message. Please try again later.");
+          console.error("EmailJS Error:", error);
+        });
+    });
+
+    // Theme toggle
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'light') {
+      body.setAttribute('data-theme', 'light');
+      toggle.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggle.addEventListener('click', () => {
+      if (body.getAttribute('data-theme') === 'light') {
+        body.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+        toggle.classList.replace('fa-sun', 'fa-moon');
+      } else {
+        body.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        toggle.classList.replace('fa-moon', 'fa-sun');
+      }
+    });
+  </script>
+
+</body>
+</html>
